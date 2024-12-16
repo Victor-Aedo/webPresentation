@@ -16,6 +16,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Asegúrate de que el video esté listo antes de inicializar el carrusel
+  const video = document.querySelector("video");
+  if (video) {
+    video.addEventListener("loadeddata", () => {
+      updateCarousel(currentIndex); // Inicializa el carrusel una vez que el video esté cargado
+    });
+  } else {
+    updateCarousel(currentIndex); // Inicializa el carrusel si no hay video
+  }
+
   prevButton.addEventListener("click", () => {
     currentIndex = (currentIndex - 1 + items.length) % items.length;
     updateCarousel(currentIndex);
@@ -25,7 +35,4 @@ document.addEventListener("DOMContentLoaded", () => {
     currentIndex = (currentIndex + 1) % items.length;
     updateCarousel(currentIndex);
   });
-
-  // Inicializa el carrusel
-  updateCarousel(currentIndex);
 });

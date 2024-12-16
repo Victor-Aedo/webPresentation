@@ -21,6 +21,8 @@ const { title, github, carrusel } = data
 const { video, imagenes } = carrusel
 const { Content } = await render(proyect) // se obtiene la propiedad content de render para obtener el contenido del md
 
+console.log(video)
+
 ---
 
 
@@ -38,8 +40,8 @@ const { Content } = await render(proyect) // se obtiene la propiedad content de 
       <!-- Carousel wrapper -->
       <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
         <!-- Item 1 -->
-        <div class="duration-700 ease-in-out hidden" data-carousel-item="active">
-          <video autoplay loop muted playsinline src={video} 
+        <div class="duration-700 ease-in-out" data-carousel-item="active">
+          <video autoplay loop muted playsinline src={video}
                   class="absolute object-cover block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
           </video>
         </div>
