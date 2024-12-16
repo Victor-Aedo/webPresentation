@@ -1,0 +1,58 @@
+---
+const {items} = Astro.props;
+
+---
+
+
+   
+
+
+<!-- Nav -->
+<nav class="bg-gray-900 dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 ">
+  <div class="max-w-screen grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 items-center justify-items-center  p-4 gap-y-10">
+        <div class="profile-Picture --  flex space-x-2 items-center ">
+            <!--<img class="profile-Picture__frame" src="" alt="Frame"> -->
+            <a href="/">
+                <img class="profile-Picture__picture -- h-10 w-10 rounded-full object-cover" src="/img/PerfilLinkedin.webp" alt="Profile Picture">
+            </a>
+            <a href="/">
+                <h3 class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Victor Aedo</h3>
+            </a>
+        </div>
+
+    <div class="mr-0 lg:10 " id="navbar-sticky">
+        {items && items.length > 0 && (
+          
+            <ul class={`grid ${items.length === 1 ? 'grid-cols-1' : 'grid-cols-3'} gap-x-6`}>
+
+              {items.map(item => {
+                const { title, href } = item; // Desestructuramos cada objeto dentro del map
+                return (
+                  <li >
+                    <a href={href} class="p-10  hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 ">
+                      {title}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+    </div>
+
+
+    <div class="">
+      <div class="contact --  flex space-x-2 items-center  ">
+          <!-- Informacion de contacto -->
+           <a href="https://www.linkedin.com/in/victor-aedo-24abb7282/" target="_blank">
+              <img class="contact__img h-7 object-cover" src="/img/linkedin.webp" alt="Linkedin"> 
+           </a>
+           <a href="https://github.com/Victor-Aedo" target="_blank">
+               <img class="contact__img h-7 object-cover" src="/img/GitHub.webp" alt="Github"> 
+           </a>
+      </div>
+    </div>
+
+
+  </div>
+    
+</nav>

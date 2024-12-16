@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.title {
+    @apply text-center 2x1 font-bold;
+}
+
+.sub-title {
+    @apply text-center h-16 font-semibold;
+}
