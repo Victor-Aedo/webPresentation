@@ -5,12 +5,14 @@ import Header from '../components/Header.astro';
 import { getCollection, getEntry } from 'astro:content';
 
 
+
+
 //Se exponene las colecciones
 const proyects = await getCollection('proyects');  //Nombre de la carpeta de colleciones
 
 const titles = [
   { title: 'Home', href: '/' },
-  { title: 'About', href: '#About-me' },
+  { title: 'About', href: '#about-me' },
   { title: 'Service', href: '#experiencia' }
 ];
 
@@ -22,7 +24,6 @@ const titles = [
 <head>
 	<!-- Iconos de contacto -->
 	<meta charset="UTF-8">
-	
 </head>
 
 <Layout title="Welcome to Astro.">
@@ -34,70 +35,71 @@ const titles = [
 			<div class="presentation-Picture flex justify-center mb-60">
 				<div class="flex flex-col items-center space-y-2">
 					<!-- Imagen de perfil -->
-					<img class="presentation-Picture__picture h-32 w-32 rounded-full object-cover border-4 border-gray-50" src="/img/PerfilLinkedin.webp" alt="Profile Picture">
+					<img class="presentation-Picture__picture h-48 w-48 md:h-80 md:w-80 rounded-full object-cover border-4 border-gray-50" src="/img/PerfilLinkedin.webp" alt="Profile Picture">
 		
 					<!-- Nombres y descripción -->
-					<h1 class="presentatio_name -- font-bold text-3xl md:text-5xl">Victor Aedo</h1>
-					<h3 class="presentatio_profession -- font-semibold ">Software Engineer</h3>
-					<h3 class="presentatio_profession -- font-semibold ">Game Developer</h3>
-					
-					
-					
+					<h1 class="presentatio_name -- title">Victor Aedo</h1>
+					<h3 class="presentatio_profession -- sub-title">Software Engineer</h3>
+					<h3 class="presentatio_profession -- sub-title">Game Developer</h3>
+				
 				</div>
 			</div>
 		</div>
 		
-		
+		<div id="about-me" class="p-20"></div>
 		<!-- About Me -->
-		<div class="container-about-me  -- grid grid-cols-1 md:grid-cols-3 gap-12 mb-60 pb-20 pt-20 px-10 bg-gray-900 border-gray-900 rounded-lg shadow">
-			<!-- Imagen -->
-			<div class="col-span-1 flex  md:justify-end md:w-48 md:h-48">
-				<img class="rounded" src="/img/PerfilLinkedinSinFondo.webp" alt="Perfil">
-			</div>
-		
-			<!-- Texto -->
-			<div class="col-span-2 text-center md:text-start prose prose-invert">
-				<h1 class="mb-4 text-white">Acerca de Mí</h1>
-				<p class="mb-3 font-normal ">
-					Ingeniero informático graduado del Instituto Profesional Duoc UC, me especializo en la creación de soluciones tecnológicas eficientes que mejoren la experiencia del usuario. Poseo habilidades en lenguajes como 
-					<span class="font-semibold">Python</span>, <span class="font-semibold">JavaScript</span> y <span class="font-semibold">C#</span>, así como experiencia en el uso de frameworks como <span class="font-semibold">Django</span>, <span class="font-semibold">React</span> y <span class="font-semibold">WPF</span>, acompañado de amplios conocimientos en la gestión de bases de datos SQL.
-				</p>
-				<a target="_blank" href="https://drive.google.com/file/d/13RR7dyl5NwIXzY7PVXPypAVappwm0sNb/view?usp=drive_link">
-					<button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-5">
-					DOWNLOAD CSV
-					</button>
-				</a>
+		<div class="container-about-me flex flex-col-reverse lg:grid md:grid-cols-3 mb-60 pb-20 pt-20 px-10 bg-gray-900 border-gray-900 rounded-lg shadow">
+		<!-- Texto -->
+		<div class="md:col-span-3 lg:col-span-2 text-center lg:text-start prose prose-invert  lg:justify-start">
+			<div>
+			<h1 class="mb-4 text-white">Acerca de Mí</h1>
+			<p class="mb-3 font-normal">
+				Ingeniero informático graduado del Instituto Profesional Duoc UC, me especializo en la creación de soluciones tecnológicas eficientes que mejoren la experiencia del usuario. Poseo habilidades en lenguajes como 
+				<span class="font-semibold">Python</span>, <span class="font-semibold">JavaScript</span> y <span class="font-semibold">C#</span>, así como experiencia en el uso de frameworks como <span class="font-semibold">Django</span>, <span class="font-semibold">React</span> y <span class="font-semibold">WPF</span>, acompañado de amplios conocimientos en la gestión de bases de datos SQL.
+			</p>
+			<a target="_blank" href="https://drive.google.com/file/d/13RR7dyl5NwIXzY7PVXPypAVappwm0sNb/view?usp=drive_link">
+				<button type="button" class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mt-5">
+				DOWNLOAD CSV
+				</button>
+			</a>
 			</div>
 		</div>
-		
+
+		<!-- Imagen -->
+		<div class="flex justify-center md:col-span-3 md:justify-center pb-20 lg:pb-0 lg:justify-start lg:col-span-1">
+			<img class="rounded-xl w-56 h-auto object-cover shadow-lg" style="mask-image: linear-gradient(to bottom, black 80%, transparent); -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent);" src="/img/PerfilLinkedinSinFondo.webp" alt="Perfil">
+		</div>
+		</div>
+
+				
 
 		<!-- Jobs -->
 
-		<section id="experiencia" class="jobs -- ">
-			<div >
-				<h1 class="text-center mb-24 text-2xl font-bold">Experiencia</h1>	
-				<p class=" mb-20 font-normal text-custom-subtitle-text">He desarrollado proyectos orientados a sitios web de e-commerce y aplicaciones de una sola página (SPA), además de aplicaciones de escritorio diseñadas para abordar problemas específicos de los clientes. Tengo experiencia en tecnologías innovadoras y, como parte de mi formación continua, he trabajado en proyectos que incluyen automatización de tareas manuales, reconocimiento de imágenes utilizando inteligencia artificial y técnicas de web scraping. Esta combinación de habilidades y proyectos me permite abordar desafíos técnicos variados y aportar soluciones eficientes y de alto impacto.</p>
+		<div id="experiencia" class="p-20"></div>
+		<div >
+			<h1 class="text-center mb-24 text-2xl font-bold">Experiencia</h1>	
+			<p class=" mb-20 font-normal text-custom-subtitle-text">He desarrollado proyectos orientados a sitios web de e-commerce y aplicaciones de una sola página (SPA), además de aplicaciones de escritorio diseñadas para abordar problemas específicos de los clientes. Tengo experiencia en tecnologías innovadoras y, como parte de mi formación continua, he trabajado en proyectos que incluyen automatización de tareas manuales, reconocimiento de imágenes utilizando inteligencia artificial y técnicas de web scraping. Esta combinación de habilidades y proyectos me permite abordar desafíos técnicos variados y aportar soluciones eficientes y de alto impacto.</p>
 
-			</div>
-			
-			<div class="grid gap-4 mt-10 col-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
+		</div>
 		
-			
-			<!-- Cargar Proyectos -->
-
-			{
-				proyects.map(proyects => {
-					const { slug, data } = proyects
-					const { title, github, description, portadaImg, carrusel } = data
+		<div class="grid gap-4 mt-10 col-2 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ">
 	
-					return (
-						<Article title= {title} gitHub= {github} img= {portadaImg} description= {description} path= {slug}/>
-					)
-					
-				})
-			}
+		
+		<!-- Cargar Proyectos -->
 
-		</section>
+		{
+			proyects.map(proyects => {
+				const { slug, data } = proyects
+				const { title, github, description, portadaImg, carrusel } = data
+
+				return (
+					<Article title= {title} gitHub= {github} img= {portadaImg} description= {description} path= {slug}/>
+				)
+				
+			})
+		}
+
+		
 
 	</main>
 </Layout>

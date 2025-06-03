@@ -4,9 +4,9 @@
 
 
 .title {
-    @apply text-center 2x1 font-bold;
+  @apply text-center text-5xl font-bold;
 }
 
 .sub-title {
-    @apply text-center h-16 font-semibold;
+    @apply text-center font-semibold;
 }

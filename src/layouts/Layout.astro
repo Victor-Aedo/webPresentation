@@ -5,6 +5,8 @@ interface Props {
 
 const { title } = Astro.props;
 import { ClientRouter } from 'astro:transitions';
+import '../styles/main.css';
+
 ---
 
 <!doctype html>
@@ -42,10 +44,12 @@ import { ClientRouter } from 'astro:transitions';
 		font-family: sans-serif;
 		background: #17181C;
 		color: RGB(252,248,251);
+		@apply text-base md:text-lg lg:text-xl;
 		
 	}
 	body {
-		@apply p-20;
+		@apply p-0 sm:p-10 md:p-20 lg:p-40; 
+		
 	}
 	
 

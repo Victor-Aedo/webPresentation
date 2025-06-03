@@ -4,7 +4,7 @@ export default {
 	theme: {
 	  extend: {
 		colors: {
-		  'custom-gray': '#23262F', // Define el color personalizado
+		  'custom-gray': '#23262F', 
 		  'customs-title-text': 'RGB(252,248,251)',
 		  'custom-subtitle-text': '#C1C3C8'
 		},
@@ -12,20 +12,20 @@ export default {
 		  DEFAULT: {
 			css: {
 			  strong: {
-				fontWeight: '900', // Hacer la fuente más gruesa
-				color: 'RGB(252,248,251)', // Cambiar el color a blanco
+				fontWeight: '900', 
+				color: 'RGB(252,248,251)',
 			  },
 			  h1: {
-				fontWeight: '900', // Aseguramos que los títulos también sean gruesos
-				color: 'RGB(252,248,251)', // Los títulos también serán blancos
+				fontWeight: '900', 
+				color: 'RGB(252,248,251)', 
 			  },
 			  h2: {
-				fontWeight: '900', // Aseguramos que los títulos también sean gruesos
-				color: 'RGB(252,248,251)', // Los títulos también serán blancos
+				fontWeight: '900',
+				color: 'RGB(252,248,251)', 
 			  },
 			  h3: {
-				fontWeight: '900', // Hacer que h3 también tenga negrita
-				color: 'RGB(252,248,251)', // Cambiar el color a blanco
+				fontWeight: '900',
+				color: 'RGB(252,248,251)', 
 			  },
 			  h4: {
 				fontWeight: '900',
