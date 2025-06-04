@@ -28,17 +28,13 @@ console.log(video)
 
 <Layout title={`${title}`}>
 
+  <Header items={[{title: `${title}`, href: '#'}]}/>
   
-  
-  <main>
-
-    <Header items={[{title: `${title}`, href: '#'}]}/>
-
-  
-
-    <div id="controls-carousel" class="grid grid-cols-1 relative w-full shadow-[0_4px_8px_rgba(0,0,0,0.1)] z-10 mt-32 md:mt-12" data-carousel="static">
+  <main class="px-5 md:px-10 lg:px-40">
+    <!-- Carrusel -->
+    <div id="controls-carousel" class="grid grid-cols-1 object-none shadow-[0_4px_8px_rgba(0,0,0,0.1)] z-10 mt-12" data-carousel="static">
       <!-- Carousel wrapper -->
-      <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+      <div class="relative aspect-[16/9] overflow-hidden rounded-lg w-full">
         <!-- Item 1 -->
         <div class="duration-700 ease-in-out" data-carousel-item="active">
           <video autoplay loop muted playsinline src={video}
@@ -79,7 +75,7 @@ console.log(video)
 
     <!--Contenido de la pagina -->
   
-    <div  class="prose mt-20 text-custom-subtitle-text">
+    <div class="prose mx-auto mt-20 text-custom-subtitle-text ">
       <Content/> <!-- Content viene de render, se llama como etiqueta html y renderiza todo el contenido de el markDown -->
     </div>
   
